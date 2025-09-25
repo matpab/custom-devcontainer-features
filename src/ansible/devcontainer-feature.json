@@ -1,0 +1,20 @@
+{
+    "id": "ansible",
+    "version": "1.0.0",
+    "name": "Ansible",
+    "description": "Installs Ansible and dependencies",
+    "options": {
+        "injections": {
+            "default": "",
+            "description": "pipx ansible injections comma separated",
+            "proposals": [
+                "mitogen,hcloud,requests"
+            ],
+            "type": "string"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers-extra/features/pipx-package",
+        "ghcr.io/devcontainers/features/python"
+    ]
+}

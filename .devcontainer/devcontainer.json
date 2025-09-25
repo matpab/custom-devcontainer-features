@@ -1,0 +1,17 @@
+{
+  "name": "Basic Node.js",
+  "image": "mcr.microsoft.com/devcontainers/base:noble",
+  "remoteUser": "vscode",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/devcontainers-extra/features/devcontainers-cli:1": {},
+    "ghcr.io/devcontainers-extra/features/pipx-package:1": {
+      "package": "dcontainer"
+    }
+  },
+  "customizations" : {
+    "jetbrains" : {
+      "backend" : "IntelliJ"
+    }
+  }
+}

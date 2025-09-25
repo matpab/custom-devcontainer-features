@@ -1,0 +1,35 @@
+{
+  "name": "OMZ Plugins",
+  "id": "omz-plugins",
+  "version": "1.0.1",
+  "description": "Sets up ZSH plugins",
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/common-utils",
+    "ghcr.io/devcontainers/features/git"
+  ],
+  "options": {
+    "plugins": {
+      "type": "string",
+      "description": "ZSH Plugins comma separated",
+      "proposals": ["dotnet,yarn,nvm,git-auto-fetch,docker,docker-compose,npm,zsh-autosuggestions,zsh-syntax-highlighting"],
+      "default": "dotnet,yarn,nvm,git-auto-fetch,docker,docker-compose,npm,zsh-autosuggestions,zsh-syntax-highlighting"
+    },
+    "omzPlugins": {
+      "type": "string",
+      "description": "OMZ Plugins comma separated",
+      "proposals": ["https://github.com/zsh-users/zsh-autosuggestions,https://github.com/zsh-users/zsh-syntax-highlighting.git"],
+      "default": "https://github.com/zsh-users/zsh-autosuggestions,https://github.com/zsh-users/zsh-syntax-highlighting.git"
+    }
+  },
+  "dependencies": [
+    {
+      "feature": "ghcr.io/devcontainers-extra/features/zsh-plugins:0",
+      "options": {
+        "plugins": "$options.plugins",
+        "omzPlugins": "$options.omzPlugins"
+      }
+    }
+  ],
+  "install_command": "echo 'Done'",
+  "test_scenarios": []
+}

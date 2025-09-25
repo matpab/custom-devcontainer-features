@@ -1,0 +1,21 @@
+{
+  "id": "zsh-history",
+  "version": "1.0.0",
+  "name": "ZSH History",
+  "description": "Sets up caching of zsh history",
+  "options": {},
+  "installsAfter": ["ghcr.io/devcontainers/features/common-utils"],
+  "postCreateCommand": {
+    "chown-zsh-history": "sudo chown -R vscode:vscode /home/vscode/zsh_history/"
+  },
+  "containerEnv": {
+    "HISTFILE": "/home/vscode/zsh_history/.zsh_history"
+  },
+  "mounts": [
+    {
+      "source": "${devcontainerId}_zsh_history",
+      "target": "/home/vscode/zsh_history",
+      "type": "volume"
+    }
+  ]
+}
